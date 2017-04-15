@@ -32,7 +32,7 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   config.include Request::JsonHelpers, :type => :controller
   config.include Request::HeadersHelpers, :type => :controller
-  config.include Devise::Test::ControllerHelpers, :type => :controller
+  # config.include Devise::Test::ControllerHelpers, :type => :controller
   config.before(:each, type: :controller) do
     include_default_accept_headers
   end
@@ -92,7 +92,7 @@ RSpec.configure do |config|
   # Devise, to solve error:
   # Devise::MissingWarden:
   #      Devise could not find the `Warden::Proxy` instance on your request environment.
-  config.include Devise::Test::ControllerHelpers, type: :controller
+  # config.include Devise::Test::ControllerHelpers, type: :controller
 end
 
 
