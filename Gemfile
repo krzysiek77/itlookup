@@ -38,6 +38,10 @@ gem 'country_select'  # translates country code to name + dictionary of countrie
 gem "font-awesome-rails" # https://github.com/bokmann/font-awesome-rails
 gem 'active_model_serializers', '0.8.3' # Api gems
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
+
 # gem 'devise' # rails g devise:install
 # gem "paranoia", "~> 2.2" # https://github.com/rubysherpas/paranoia
 # gem 'ancestry'
