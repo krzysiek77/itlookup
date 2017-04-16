@@ -18,6 +18,10 @@
     index = ip_addresses.indexOf ip_address
     ip_addresses.splice index, 1
     @replaceState ip_addresses: ip_addresses
+  updateIpAddress: (ip_address, data) ->
+    index = @state.ip_addresses.indexOf ip_address
+    ip_addresses = React.addons.update(@state.ip_addresses, { $splice: [[index, 1, data]] })
+    @replaceState ip_addresses: ip_addresses
   componentDidMount: ->
     console.log 'IpAddresses component did mount'
     $.ajax
@@ -48,4 +52,4 @@
             React.DOM.th null, 'actions'
         React.DOM.tbody null,
           for ip_address in @state.ip_addresses
-            React.createElement IpAddress, key: ip_address.id, ip_address: ip_address, handleDeleteIpAddress: @deleteIpAddress
+            React.createElement IpAddress, key: ip_address.id, ip_address: ip_address, handleDeleteIpAddress: @deleteIpAddress, handleEditIpAddress: @updateIpAddress

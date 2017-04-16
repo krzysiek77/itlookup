@@ -16,6 +16,12 @@ class Api::V1::IpAddressesController < Api::V1::BaseController
     respond_with :api, :v1, IpAddress.destroy(params[:id])
   end
 
+  def update
+    ip_address = IpAddress.find(params[:id])
+    ip_address.update_attributes(ip_address_params)
+    respond_with ip_address, json: ip_address
+  end
+
   private
     def ip_address_params
       params.require(:ip_address).permit(:id, :ip, :name)
