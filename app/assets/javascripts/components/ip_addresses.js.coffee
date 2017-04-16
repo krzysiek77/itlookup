@@ -43,13 +43,18 @@
         'IP Addreses'
       React.createElement IpAddressForm, handleNewIpAddress: @addIpAddress
       React.DOM.table
-        className: 'table table-responsive table-stripped table-hover table-sm'
+        className: 'table table-stripped table-hover table-sm'
         React.DOM.thead
           className: 'thead-inverse'
           React.DOM.tr null,
             React.DOM.th null, 'ip'
             React.DOM.th null, 'name'
-            React.DOM.th null, 'actions'
+            React.DOM.th null, 'hardware type'
+            React.DOM.th null, 'building'
+            React.DOM.th null, 'room'
+            React.DOM.th
+              className: 'text-right'
+              'actions'
         React.DOM.tbody null,
           for ip_address in @state.ip_addresses
             React.createElement IpAddress, key: ip_address.id, ip_address: ip_address, handleDeleteIpAddress: @deleteIpAddress, handleEditIpAddress: @updateIpAddress

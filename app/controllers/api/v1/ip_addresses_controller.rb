@@ -24,6 +24,7 @@ class Api::V1::IpAddressesController < Api::V1::BaseController
 
   private
     def ip_address_params
-      params.require(:ip_address).permit(:id, :ip, :name)
+      params.require(:ip_address).permit(:id, :ip, :name, :hardware_category, :mac,
+        :building, :room, :model, :serial_number, :user, :password, :additional_info)
     end
 end

@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414204440) do
+ActiveRecord::Schema.define(version: 20170416195438) do
 
   create_table "ip_addresses", force: :cascade do |t|
-    t.string   "ip",         limit: 255
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "ip",                limit: 255
+    t.string   "name",              limit: 255
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "building",          limit: 255
+    t.string   "room",              limit: 255
+    t.string   "mac",               limit: 255
+    t.string   "serial_number",     limit: 255
+    t.string   "hardware_category", limit: 255
+    t.string   "model",             limit: 255
+    t.string   "user",              limit: 255
+    t.string   "password",          limit: 255
+    t.text     "additional_info",   limit: 65535
   end
 
 end
