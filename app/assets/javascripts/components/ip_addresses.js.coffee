@@ -3,6 +3,16 @@
     ip_addresses: []
   getDefaultState: ->
     ip_addresses: []
+  addIpAddress: (ip_address) ->
+    ip_addresses = @state.ip_addresses.slice()
+    ip_addresses.push ip_address
+    ip_addresses = ip_addresses.sort((a, b) ->
+      if (a.ip < b.ip)
+        return -1
+      if (a.ip > b.ip)
+        return 1
+      return 0)
+    @setState ip_addresses: ip_addresses
   componentDidMount: ->
     console.log 'IpAddresses component did mount'
     $.ajax
@@ -22,6 +32,7 @@
       React.DOM.h1
         className: 'title'
         'IP Addreses'
+      React.createElement IpAddressForm, handleNewIpAddress: @addIpAddress
       React.DOM.table
         className: 'table table-responsive table-stripped table-hover table-sm'
         React.DOM.thead
