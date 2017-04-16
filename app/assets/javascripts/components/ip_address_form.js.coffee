@@ -26,6 +26,8 @@
           placeholder: 'ip address'
           value: @state.ip
           onChange: @handleValueChange
+      React.DOM.div
+        className: 'form-group'
         React.DOM.input
           type: 'name'
           className: 'form-control form-control-sm'
@@ -33,8 +35,10 @@
           placeholder: 'name'
           value: @state.name
           onChange: @handleValueChange
+      React.DOM.div
+        className: 'form-group'
         React.DOM.button
           type: 'submit'
-          className: 'btn btn-primary'
+          className: 'btn btn-outline-primary btn-sm'
           disabled: !@valid()
           'Create record'

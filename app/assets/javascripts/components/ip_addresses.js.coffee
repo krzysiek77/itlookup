@@ -13,6 +13,11 @@
         return 1
       return 0)
     @setState ip_addresses: ip_addresses
+  deleteIpAddress: (ip_address) ->
+    ip_addresses = @state.ip_addresses.slice()
+    index = ip_addresses.indexOf ip_address
+    ip_addresses.splice index, 1
+    @replaceState ip_addresses: ip_addresses
   componentDidMount: ->
     console.log 'IpAddresses component did mount'
     $.ajax
@@ -40,6 +45,7 @@
           React.DOM.tr null,
             React.DOM.th null, 'ip'
             React.DOM.th null, 'name'
+            React.DOM.th null, 'actions'
         React.DOM.tbody null,
           for ip_address in @state.ip_addresses
-            React.createElement IpAddress, key: ip_address.id, ip_address: ip_address
+            React.createElement IpAddress, key: ip_address.id, ip_address: ip_address, handleDeleteIpAddress: @deleteIpAddress

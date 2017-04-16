@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :ip_addresses, only: [:index, :show, :create, :update, :delete]
+      resources :ip_addresses, only: [:index, :show, :create, :update, :destroy]
     end
   end
 end

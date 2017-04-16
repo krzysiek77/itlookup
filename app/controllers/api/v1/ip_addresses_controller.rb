@@ -12,6 +12,10 @@ class Api::V1::IpAddressesController < Api::V1::BaseController
     end
   end
 
+  def destroy
+    respond_with :api, :v1, IpAddress.destroy(params[:id])
+  end
+
   private
     def ip_address_params
       params.require(:ip_address).permit(:id, :ip, :name)
