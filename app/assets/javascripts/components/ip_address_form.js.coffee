@@ -38,172 +38,170 @@
         @setState @getInitialState()
       error: (response) =>
         @setState errors: response.responseJSON.errors
-        console.log "errors: " + @state.errors.ip
-        console.log "errors: " + @state.ip
       dataType: 'json'
     # $.post '/api/v1/ip_addresses', { ip_address: @state }, (data) =>
     #   @props.handleNewIpAddress data
     #   @setState @getInitialState()
     # , 'JSON'
   newIpAddressFormAddButton: ->
-    React.DOM.div null,
-      React.DOM.div
+    RD.div null,
+      RD.div
         className: 'row'
-        React.DOM.div
+        RD.div
           className: 'col text-right'
-          React.DOM.button
+          RD.button
             className: 'btn btn-outline-primary btn-sm'
             onClick: @handleToggle
             title: 'new IP address'
-            React.DOM.i
+            RD.i
               className: 'fa fa-plus'
-      React.DOM.br null
+      RD.br null
   newIpAddressForm: ->
-    React.DOM.form
+    RD.form
       onSubmit: @handleSubmit
-      React.DOM.div
+      RD.div
         className: 'row'
-        React.DOM.div
+        RD.div
           className: 'col'
-          React.DOM.div
+          RD.div
             className: 'form-group'
-            React.DOM.input
+            RD.input
               type: 'ip'
               className: 'form-control form-control-sm'
               name: 'ip'
               placeholder: 'ip address'
               value: @state.ip
               onChange: @handleValueChange
-            React.DOM.span null,
+            RD.span null,
               @state.errors.ip
-        React.DOM.div
+        RD.div
           className: 'col'
-          React.DOM.div
+          RD.div
             className: 'form-group'
-            React.DOM.input
+            RD.input
               type: 'name'
               className: 'form-control form-control-sm'
               name: 'name'
               placeholder: 'name'
               value: @state.name
               onChange: @handleValueChange
-            React.DOM.span null,
+            RD.span null,
               @state.errors.name
-        React.DOM.div
+        RD.div
           className: 'col'
-          React.DOM.div
+          RD.div
             className: 'form-group'
-            React.DOM.input
+            RD.input
               type: 'building'
               className: 'form-control form-control-sm'
               name: 'building'
               placeholder: 'building'
               value: @state.building
               onChange: @handleValueChange
-            React.DOM.span null,
+            RD.span null,
               @state.errors.building
-        React.DOM.div
+        RD.div
           className: 'col'
-          React.DOM.div
+          RD.div
             className: 'form-group'
-            React.DOM.input
+            RD.input
               type: 'room'
               className: 'form-control form-control-sm'
               name: 'room'
               placeholder: 'room'
               value: @state.room
               onChange: @handleValueChange
-            React.DOM.span null,
+            RD.span null,
               @state.errors.room
-      React.DOM.div
+      RD.div
         className: 'row'
-        React.DOM.div
+        RD.div
           className: 'col'
-          React.DOM.div
+          RD.div
             className: 'form-group'
-            React.DOM.input
+            RD.input
               type: 'mac'
               className: 'form-control form-control-sm'
               name: 'mac'
               placeholder: 'mac'
               value: @state.mac
               onChange: @handleValueChange
-            React.DOM.span null,
+            RD.span null,
               @state.errors.mac
-        React.DOM.div
+        RD.div
           className: 'col'
-          React.DOM.div
+          RD.div
             className: 'form-group'
-            React.DOM.input
+            RD.input
               type: 'hardware_category'
               className: 'form-control form-control-sm'
               name: 'hardware_category'
               placeholder: 'hardware_category'
               value: @state.hardware_category
               onChange: @handleValueChange
-            React.DOM.span null,
+            RD.span null,
               @state.errors.hardware_category
-        React.DOM.div
+        RD.div
           className: 'col'
-          React.DOM.div
+          RD.div
             className: 'form-group'
-            React.DOM.input
+            RD.input
               type: 'model'
               className: 'form-control form-control-sm'
               name: 'model'
               placeholder: 'model'
               value: @state.model
               onChange: @handleValueChange
-            React.DOM.span null,
+            RD.span null,
               @state.errors.model
-        React.DOM.div
+        RD.div
           className: 'col'
-          React.DOM.div
+          RD.div
             className: 'form-group'
-            React.DOM.input
+            RD.input
               type: 'serial_number'
               className: 'form-control form-control-sm'
               name: 'serial_number'
               placeholder: 'serial_number'
               value: @state.serial_number
               onChange: @handleValueChange
-            React.DOM.span null,
+            RD.span null,
               @state.errors.serial_number
-      React.DOM.div
+      RD.div
         className: 'row'
-        React.DOM.div
+        RD.div
           className: 'col'
-          React.DOM.div
+          RD.div
             className: 'form-group'
-            React.DOM.input
+            RD.input
               type: 'user'
               className: 'form-control form-control-sm'
               name: 'user'
               placeholder: 'user'
               value: @state.user
               onChange: @handleValueChange
-            React.DOM.span null,
+            RD.span null,
               @state.errors.user
-        React.DOM.div
+        RD.div
           className: 'col'
-          React.DOM.div
+          RD.div
             className: 'form-group'
-            React.DOM.input
+            RD.input
               type: 'password'
               className: 'form-control form-control-sm'
               name: 'password'
               placeholder: 'password'
               value: @state.password
               onChange: @handleValueChange
-            React.DOM.span null,
+            RD.span null,
               @state.errors.password
-      React.DOM.div
+      RD.div
         className: 'row'
-        React.DOM.div
+        RD.div
           className: 'col-9'
-          React.DOM.div
+          RD.div
             className: 'form-group'
-            React.DOM.textarea
+            RD.textarea
               type: 'additional_info'
               className: 'form-control form-control-sm'
               rows: 3
@@ -211,24 +209,24 @@
               placeholder: 'additional_info'
               value: @state.additional_info
               onChange: @handleValueChange
-            React.DOM.span null,
+            RD.span null,
               @state.errors.additional_info
-        React.DOM.div
+        RD.div
           className: 'col-3 text-right'
-          React.DOM.div
+          RD.div
             className: 'form-group'
-            React.DOM.button
+            RD.button
               type: 'submit'
               className: 'btn btn-outline-primary btn-sm'
               disabled: !@valid()
               title: 'create record'
-              React.DOM.i
+              RD.i
                 className: 'fa fa-floppy-o'
-            React.DOM.button
+            RD.button
               className: 'btn btn-outline-primary btn-sm'
               onClick: @handleToggle
               title: 'cancel'
-              React.DOM.i
+              RD.i
                 className: 'fa fa-undo'
   render: ->
     if @state.newRecord

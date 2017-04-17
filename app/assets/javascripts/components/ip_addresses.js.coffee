@@ -23,7 +23,6 @@
     ip_addresses = React.addons.update(@state.ip_addresses, { $splice: [[index, 1, data]] })
     @replaceState ip_addresses: ip_addresses
   componentDidMount: ->
-    console.log 'IpAddresses component did mount'
     $.ajax
       url: '/api/v1/ip_addresses'
       type: 'GET'
@@ -31,30 +30,27 @@
       error: (jqXHR, textStatus, errorThrown) ->
         console.log 'ip_addresses AJAX Error: ' + errorThrown
       success: (response) =>
-        console.log 'response:', response
         @setState { ip_addresses: response.ip_addresses }
-        console.log @state.ip_addresses
-        console.log @state.ip_addresses.length
   render: ->
-    React.DOM.div
+    RD.div
       className: 'ip-ddresses'
-      React.DOM.h1
+      RD.h1
         className: 'title'
         'IP Addreses'
       React.createElement IpAddressForm, handleNewIpAddress: @addIpAddress
-      React.DOM.table
+      RD.table
         className: 'table table-stripped table-hover table-sm'
-        React.DOM.thead
+        RD.thead
           className: 'thead-inverse'
-          React.DOM.tr null,
-            React.DOM.th null, 'ip'
-            React.DOM.th null, 'name'
-            React.DOM.th null, 'hardware type'
-            React.DOM.th null, 'building'
-            React.DOM.th null, 'room'
-            React.DOM.th
+          RD.tr null,
+            RD.th null, 'ip'
+            RD.th null, 'name'
+            RD.th null, 'hardware type'
+            RD.th null, 'building'
+            RD.th null, 'room'
+            RD.th
               className: 'text-right'
               'actions'
-        React.DOM.tbody null,
+        RD.tbody null,
           for ip_address in @state.ip_addresses
             React.createElement IpAddress, key: ip_address.id, ip_address: ip_address, handleDeleteIpAddress: @deleteIpAddress, handleEditIpAddress: @updateIpAddress

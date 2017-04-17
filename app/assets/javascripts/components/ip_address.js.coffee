@@ -37,149 +37,149 @@
         @setState edit: false
         @props.handleEditIpAddress @props.ip_address, data
   IpAddressRow: ->
-    React.DOM.tr null,
-      React.DOM.td null, @props.ip_address.ip
-      React.DOM.td null, @props.ip_address.name
-      React.DOM.td null, @props.ip_address.hardware_category
-      React.DOM.td null, @props.ip_address.building
-      React.DOM.td null, @props.ip_address.room
-      React.DOM.td
+    RD.tr null,
+      RD.td null, @props.ip_address.ip
+      RD.td null, @props.ip_address.name
+      RD.td null, @props.ip_address.hardware_category
+      RD.td null, @props.ip_address.building
+      RD.td null, @props.ip_address.room
+      RD.td
         className: 'text-right'
-        React.DOM.button
+        RD.button
           className: 'btn btn-outline-primary btn-sm'
           onClick: @handleToggle
           title: 'edit'
-          React.DOM.i
+          RD.i
             className: 'fa fa-pencil'
-        React.DOM.button
+        RD.button
           className: 'btn btn-outline-danger btn-sm'
           onClick: @handleDelete
           title: 'delete'
-          React.DOM.i
+          RD.i
             className: 'fa fa-trash-o'
   IpAddressForm: ->
-    React.DOM.tr null,
-      React.DOM.td
+    RD.tr null,
+      RD.td
         colSpan: 5
-        React.DOM.div
+        RD.div
           className: 'row'
-          React.DOM.div
+          RD.div
             className: 'col'
-            React.DOM.label
+            RD.label
               'ip'
-            React.DOM.input
+            RD.input
               className: 'form-control'
               type: 'text'
               defaultValue: @props.ip_address.ip
               ref: 'ip'
-          React.DOM.div
+          RD.div
             className: 'col'
-            React.DOM.label
+            RD.label
               'name'
-            React.DOM.input
+            RD.input
               className: 'form-control'
               type: 'text'
               defaultValue: @props.ip_address.name
               ref: 'name'
-          React.DOM.div
+          RD.div
             className: 'col'
-            React.DOM.label
+            RD.label
               'hardware'
-            React.DOM.input
+            RD.input
               className: 'form-control'
               type: 'text'
               defaultValue: @props.ip_address.hardware_category
               ref: 'hardware_category'
-          React.DOM.div
+          RD.div
             className: 'col'
-            React.DOM.label
+            RD.label
               'building'
-            React.DOM.input
+            RD.input
               className: 'form-control'
               type: 'text'
               defaultValue: @props.ip_address.building
               ref: 'building'
-          React.DOM.div
+          RD.div
             className: 'col'
-            React.DOM.label
+            RD.label
               'room'
-            React.DOM.input
+            RD.input
               className: 'form-control'
               type: 'text'
               defaultValue: @props.ip_address.room
               ref: 'room'
-        React.DOM.div
+        RD.div
           className: 'row'
-          React.DOM.div
+          RD.div
             className: 'col'
-            React.DOM.label
+            RD.label
               'mac'
-            React.DOM.input
+            RD.input
               className: 'form-control'
               type: 'text'
               defaultValue: @props.ip_address.mac
               ref: 'mac'
-          React.DOM.div
+          RD.div
             className: 'col'
-            React.DOM.label
+            RD.label
               'model'
-            React.DOM.input
+            RD.input
               className: 'form-control'
               type: 'text'
               defaultValue: @props.ip_address.model
               ref: 'model'
-          React.DOM.div
+          RD.div
             className: 'col'
-            React.DOM.label
+            RD.label
               'serial_number'
-            React.DOM.input
+            RD.input
               className: 'form-control'
               type: 'text'
               defaultValue: @props.ip_address.serial_number
               ref: 'serial_number'
-          React.DOM.div
+          RD.div
             className: 'col'
-            React.DOM.label
+            RD.label
               'user'
-            React.DOM.input
+            RD.input
               className: 'form-control'
               type: 'text'
               defaultValue: @props.ip_address.user
               ref: 'user'
-          React.DOM.div
+          RD.div
             className: 'col'
-            React.DOM.label
+            RD.label
               'password'
-            React.DOM.input
+            RD.input
               className: 'form-control'
               type: 'text'
               defaultValue: @props.ip_address.password
               ref: 'password'
-        React.DOM.div
+        RD.div
           className: 'row'
-          React.DOM.div
+          RD.div
             className: 'col'
-            React.DOM.label
+            RD.label
               'additional info'
-            React.DOM.input
+            RD.input
               className: 'form-control'
               type: 'text'
               rows: 3
               defaultValue: @props.ip_address.additional_info
               ref: 'additional_info'
-      React.DOM.td
+      RD.td
         className: 'text-right'
-        React.DOM.button
+        RD.button
           className: 'btn btn-outline-primary btn-sm'
           onClick: @handleEdit
           title: 'update'
-          React.DOM.i
+          RD.i
             className: 'fa fa-floppy-o'
-        React.DOM.button
+        RD.button
           className: 'btn btn-outline-danger btn-sm'
           onClick: @handleToggle
           title: 'cancel'
-          React.DOM.i
+          RD.i
             className: 'fa fa-undo'
   render: ->
     if @state.edit
