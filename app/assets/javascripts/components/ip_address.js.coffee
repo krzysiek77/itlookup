@@ -1,9 +1,10 @@
 @IpAddress = React.createClass
   getInitialState: ->
     edit: false
+    errors: []
   handleToggle: (e) ->
     e.preventDefault()
-    @setState edit: !@state.edit
+    @setState {edit: !@state.edit, errors: []}
   handleDelete: (e) ->
     e.preventDefault
     if confirm 'Are you sure?'
@@ -36,6 +37,8 @@
       success: (data) =>
         @setState edit: false
         @props.handleEditIpAddress @props.ip_address, data
+      error: (response) =>
+        @setState errors: response.responseJSON.errors
   IpAddressRow: ->
     RD.tr null,
       RD.td null, @props.ip_address.ip
@@ -72,6 +75,8 @@
               type: 'text'
               defaultValue: @props.ip_address.ip
               ref: 'ip'
+            RD.span null,
+              @state.errors.ip
           RD.div
             className: 'col'
             RD.label
@@ -81,6 +86,8 @@
               type: 'text'
               defaultValue: @props.ip_address.name
               ref: 'name'
+            RD.span null,
+              @state.errors.name
           RD.div
             className: 'col'
             RD.label
@@ -90,6 +97,8 @@
               type: 'text'
               defaultValue: @props.ip_address.hardware_category
               ref: 'hardware_category'
+            RD.span null,
+              @state.errors.hardware_category
           RD.div
             className: 'col'
             RD.label
@@ -99,6 +108,8 @@
               type: 'text'
               defaultValue: @props.ip_address.building
               ref: 'building'
+            RD.span null,
+              @state.errors.building
           RD.div
             className: 'col'
             RD.label
@@ -108,6 +119,8 @@
               type: 'text'
               defaultValue: @props.ip_address.room
               ref: 'room'
+            RD.span null,
+              @state.errors.room
         RD.div
           className: 'row'
           RD.div
@@ -119,6 +132,8 @@
               type: 'text'
               defaultValue: @props.ip_address.mac
               ref: 'mac'
+            RD.span null,
+              @state.errors.mac
           RD.div
             className: 'col'
             RD.label
@@ -128,6 +143,8 @@
               type: 'text'
               defaultValue: @props.ip_address.model
               ref: 'model'
+            RD.span null,
+              @state.errors.model
           RD.div
             className: 'col'
             RD.label
@@ -137,6 +154,8 @@
               type: 'text'
               defaultValue: @props.ip_address.serial_number
               ref: 'serial_number'
+            RD.span null,
+              @state.errors.serial_number
           RD.div
             className: 'col'
             RD.label
@@ -146,6 +165,8 @@
               type: 'text'
               defaultValue: @props.ip_address.user
               ref: 'user'
+            RD.span null,
+              @state.errors.user
           RD.div
             className: 'col'
             RD.label
@@ -155,6 +176,8 @@
               type: 'text'
               defaultValue: @props.ip_address.password
               ref: 'password'
+            RD.span null,
+              @state.errors.password
         RD.div
           className: 'row'
           RD.div
@@ -167,6 +190,8 @@
               rows: 3
               defaultValue: @props.ip_address.additional_info
               ref: 'additional_info'
+            RD.span null,
+              @state.errors.additional_info
       RD.td
         className: 'text-right'
         RD.button
