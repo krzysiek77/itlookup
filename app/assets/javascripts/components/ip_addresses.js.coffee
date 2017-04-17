@@ -49,19 +49,12 @@
       RD.div
         className: 'row'
         RD.div
-          className: 'col-10'
+          className: 'col-11'
           RD.input
             className: 'form-control form-control-sm'
             ref: 'search'
             placeholder: 'you can search by IP, MAC, name, office, hardware category and model.'
-        RD.div
-          className: 'col-1'
-          RD.button
-            className: 'btn btn-outline-primary btn-sm'
-            onClick: @handleSearch
-            title: 'search...'
-            RD.i
-              className: 'fa fa-search'
+            onChange: @handleSearch
         RD.div
           className: 'col-1'
           React.createElement IpAddressForm, handleNewIpAddress: @addIpAddress

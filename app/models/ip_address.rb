@@ -26,7 +26,7 @@ class IpAddress < ActiveRecord::Base
 
   def self.search(search)
     x = search.strip.downcase
-    where("ip LIKE :youWantWhat OR name LIKE :youWantWhat", {youWantWhat: "%#{x}%"})
+    where("ip LIKE :a OR name LIKE :a OR mac LIKE :a OR room LIKE :a OR hardware_category LIKE :a OR model LIKE :a", {a: "%#{x}%"})
   end
 
 end
