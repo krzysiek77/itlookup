@@ -15,9 +15,11 @@
     errors: []
   handleToggle: (e) ->
     e.preventDefault()
-    newRecordValue = @state.newRecord
-    @setState @getInitialState()
-    @setState newRecord: !newRecordValue
+    # confirm before cancel in case some data has been already provided
+    if !@state.newRecord || (@state.newRecord && confirm 'Are you sure?')
+      newRecordValue = @state.newRecord
+      @setState @getInitialState()
+      @setState newRecord: !newRecordValue
   handleValueChange: (e) ->
     valueName = e.target.name
     @setState "#{ valueName }": e.target.value

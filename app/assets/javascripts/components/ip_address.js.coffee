@@ -6,12 +6,13 @@
     @setState edit: !@state.edit
   handleDelete: (e) ->
     e.preventDefault
-    $.ajax
-      method: 'DELETE'
-      url: "/api/v1/ip_addresses/#{ @props.ip_address.id }"
-      dataType: 'JSON'
-      success: () =>
-        @props.handleDeleteIpAddress @props.ip_address
+    if confirm 'Are you sure?'
+      $.ajax
+        method: 'DELETE'
+        url: "/api/v1/ip_addresses/#{ @props.ip_address.id }"
+        dataType: 'JSON'
+        success: () =>
+          @props.handleDeleteIpAddress @props.ip_address
   handleEdit: (e) ->
     e.preventDefault
     data =
