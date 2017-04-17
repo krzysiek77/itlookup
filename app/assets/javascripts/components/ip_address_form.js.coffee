@@ -11,6 +11,10 @@
     user: ''
     password: ''
     additional_info: ''
+    newRecord: false
+  handleToggle: (e) ->
+    e.preventDefault()
+    @setState newRecord: !@state.newRecord
   handleValueChange: (e) ->
     valueName = e.target.name
     @setState "#{ valueName }": e.target.value
@@ -22,7 +26,18 @@
       @props.handleNewIpAddress data
       @setState @getInitialState()
     , 'JSON'
-  render: ->
+  newIpAddressFormAddButton: ->
+    React.DOM.div null,
+      React.DOM.div
+        className: 'row'
+        React.DOM.div
+          className: 'col text-right'
+          React.DOM.button
+            className: 'btn btn-outline-primary btn-sm'
+            onClick: @handleToggle
+            'new IP address'
+      React.DOM.br null
+  newIpAddressForm: ->
     React.DOM.form
       onSubmit: @handleSubmit
       React.DOM.div
@@ -163,4 +178,13 @@
               type: 'submit'
               className: 'btn btn-outline-primary btn-sm'
               disabled: !@valid()
-              'Create record'
+              'create record'
+            React.DOM.button
+              className: 'btn btn-outline-primary btn-sm'
+              onClick: @handleToggle
+              'cancel'
+  render: ->
+    if @state.newRecord
+      @newIpAddressForm()
+    else
+      @newIpAddressFormAddButton()
