@@ -24,4 +24,9 @@ class IpAddress < ActiveRecord::Base
   validates :name, presence: true
   validates :room, presence: true
 
+  def self.search(search)
+    x = search.strip.downcase
+    where("ip LIKE :youWantWhat OR name LIKE :youWantWhat", {youWantWhat: "%#{x}%"})
+  end
+
 end

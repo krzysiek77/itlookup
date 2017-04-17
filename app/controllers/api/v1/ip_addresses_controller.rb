@@ -1,6 +1,11 @@
 class Api::V1::IpAddressesController < Api::V1::BaseController
   def index
-    respond_with IpAddress.all.order(:ip)
+    if params[:search]
+      ip_addresses = IpAddress.search(params[:search]).order(:ip)
+    else
+      ip_addresses = IpAddress.all.order(:ip)
+    end
+    respond_with ip_addresses
   end
 
   def create

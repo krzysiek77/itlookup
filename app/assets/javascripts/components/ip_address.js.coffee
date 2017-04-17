@@ -68,7 +68,7 @@
             RD.label
               'ip'
             RD.input
-              className: 'form-control'
+              className: 'form-control form-control-sm'
               type: 'text'
               defaultValue: @props.ip_address.ip
               ref: 'ip'
@@ -77,7 +77,7 @@
             RD.label
               'name'
             RD.input
-              className: 'form-control'
+              className: 'form-control form-control-sm'
               type: 'text'
               defaultValue: @props.ip_address.name
               ref: 'name'
@@ -86,7 +86,7 @@
             RD.label
               'hardware'
             RD.input
-              className: 'form-control'
+              className: 'form-control form-control-sm'
               type: 'text'
               defaultValue: @props.ip_address.hardware_category
               ref: 'hardware_category'
@@ -95,7 +95,7 @@
             RD.label
               'building'
             RD.input
-              className: 'form-control'
+              className: 'form-control form-control-sm'
               type: 'text'
               defaultValue: @props.ip_address.building
               ref: 'building'
@@ -104,7 +104,7 @@
             RD.label
               'room'
             RD.input
-              className: 'form-control'
+              className: 'form-control form-control-sm'
               type: 'text'
               defaultValue: @props.ip_address.room
               ref: 'room'
@@ -115,7 +115,7 @@
             RD.label
               'mac'
             RD.input
-              className: 'form-control'
+              className: 'form-control form-control-sm'
               type: 'text'
               defaultValue: @props.ip_address.mac
               ref: 'mac'
@@ -124,7 +124,7 @@
             RD.label
               'model'
             RD.input
-              className: 'form-control'
+              className: 'form-control form-control-sm'
               type: 'text'
               defaultValue: @props.ip_address.model
               ref: 'model'
@@ -133,7 +133,7 @@
             RD.label
               'serial_number'
             RD.input
-              className: 'form-control'
+              className: 'form-control form-control-sm'
               type: 'text'
               defaultValue: @props.ip_address.serial_number
               ref: 'serial_number'
@@ -142,7 +142,7 @@
             RD.label
               'user'
             RD.input
-              className: 'form-control'
+              className: 'form-control form-control-sm'
               type: 'text'
               defaultValue: @props.ip_address.user
               ref: 'user'
@@ -151,7 +151,7 @@
             RD.label
               'password'
             RD.input
-              className: 'form-control'
+              className: 'form-control form-control-sm'
               type: 'text'
               defaultValue: @props.ip_address.password
               ref: 'password'
@@ -162,7 +162,7 @@
             RD.label
               'additional info'
             RD.input
-              className: 'form-control'
+              className: 'form-control form-control-sm'
               type: 'text'
               rows: 3
               defaultValue: @props.ip_address.additional_info

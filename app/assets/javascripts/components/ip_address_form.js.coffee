@@ -67,7 +67,7 @@
             className: 'form-group'
             RD.input
               type: 'ip'
-              className: 'form-control form-control-sm'
+              className: 'form-control form-control-sm form-control form-control-sm-sm'
               name: 'ip'
               placeholder: 'ip address'
               value: @state.ip
@@ -80,7 +80,7 @@
             className: 'form-group'
             RD.input
               type: 'name'
-              className: 'form-control form-control-sm'
+              className: 'form-control form-control-sm form-control form-control-sm-sm'
               name: 'name'
               placeholder: 'name'
               value: @state.name
@@ -93,7 +93,7 @@
             className: 'form-group'
             RD.input
               type: 'building'
-              className: 'form-control form-control-sm'
+              className: 'form-control form-control-sm form-control form-control-sm-sm'
               name: 'building'
               placeholder: 'building'
               value: @state.building
@@ -106,7 +106,7 @@
             className: 'form-group'
             RD.input
               type: 'room'
-              className: 'form-control form-control-sm'
+              className: 'form-control form-control-sm form-control form-control-sm-sm'
               name: 'room'
               placeholder: 'room'
               value: @state.room
@@ -121,7 +121,7 @@
             className: 'form-group'
             RD.input
               type: 'mac'
-              className: 'form-control form-control-sm'
+              className: 'form-control form-control-sm form-control form-control-sm-sm'
               name: 'mac'
               placeholder: 'mac'
               value: @state.mac
@@ -134,7 +134,7 @@
             className: 'form-group'
             RD.input
               type: 'hardware_category'
-              className: 'form-control form-control-sm'
+              className: 'form-control form-control-sm form-control form-control-sm-sm'
               name: 'hardware_category'
               placeholder: 'hardware_category'
               value: @state.hardware_category
@@ -147,7 +147,7 @@
             className: 'form-group'
             RD.input
               type: 'model'
-              className: 'form-control form-control-sm'
+              className: 'form-control form-control-sm form-control form-control-sm-sm'
               name: 'model'
               placeholder: 'model'
               value: @state.model
@@ -160,7 +160,7 @@
             className: 'form-group'
             RD.input
               type: 'serial_number'
-              className: 'form-control form-control-sm'
+              className: 'form-control form-control-sm form-control form-control-sm-sm'
               name: 'serial_number'
               placeholder: 'serial_number'
               value: @state.serial_number
@@ -175,7 +175,7 @@
             className: 'form-group'
             RD.input
               type: 'user'
-              className: 'form-control form-control-sm'
+              className: 'form-control form-control-sm form-control form-control-sm-sm'
               name: 'user'
               placeholder: 'user'
               value: @state.user
@@ -188,7 +188,7 @@
             className: 'form-group'
             RD.input
               type: 'password'
-              className: 'form-control form-control-sm'
+              className: 'form-control form-control-sm form-control form-control-sm-sm'
               name: 'password'
               placeholder: 'password'
               value: @state.password
@@ -203,7 +203,7 @@
             className: 'form-group'
             RD.textarea
               type: 'additional_info'
-              className: 'form-control form-control-sm'
+              className: 'form-control form-control-sm form-control form-control-sm-sm'
               rows: 3
               name: 'additional_info'
               placeholder: 'additional_info'
