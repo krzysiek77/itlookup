@@ -54,7 +54,9 @@
           React.DOM.button
             className: 'btn btn-outline-primary btn-sm'
             onClick: @handleToggle
-            'new IP address'
+            title: 'new IP address'
+            React.DOM.i
+              className: 'fa fa-plus'
       React.DOM.br null
   newIpAddressForm: ->
     React.DOM.form
@@ -219,11 +221,15 @@
               type: 'submit'
               className: 'btn btn-outline-primary btn-sm'
               disabled: !@valid()
-              'create record'
+              title: 'create record'
+              React.DOM.i
+                className: 'fa fa-floppy-o'
             React.DOM.button
               className: 'btn btn-outline-primary btn-sm'
               onClick: @handleToggle
-              'cancel'
+              title: 'cancel'
+              React.DOM.i
+                className: 'fa fa-undo'
   render: ->
     if @state.newRecord
       @newIpAddressForm()

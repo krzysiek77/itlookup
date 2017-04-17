@@ -48,11 +48,15 @@
         React.DOM.button
           className: 'btn btn-outline-primary btn-sm'
           onClick: @handleToggle
-          'edit'
+          title: 'edit'
+          React.DOM.i
+            className: 'fa fa-pencil'
         React.DOM.button
           className: 'btn btn-outline-danger btn-sm'
           onClick: @handleDelete
-          'delete'
+          title: 'delete'
+          React.DOM.i
+            className: 'fa fa-trash-o'
   IpAddressForm: ->
     React.DOM.tr null,
       React.DOM.td
@@ -168,11 +172,15 @@
         React.DOM.button
           className: 'btn btn-outline-primary btn-sm'
           onClick: @handleEdit
-          'update'
+          title: 'update'
+          React.DOM.i
+            className: 'fa fa-floppy-o'
         React.DOM.button
           className: 'btn btn-outline-danger btn-sm'
           onClick: @handleToggle
-          'cancel'
+          title: 'cancel'
+          React.DOM.i
+            className: 'fa fa-undo'
   render: ->
     if @state.edit
       @IpAddressForm()
