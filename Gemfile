@@ -31,6 +31,11 @@ group :test do
   gem 'database_cleaner'
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 gem 'responders'  # rails g responders:install
 gem 'react-rails' # rails g react:install
 gem 'bootstrap', '~> 4.0.0alpha3.1'
@@ -48,3 +53,5 @@ end
 # gem 'react-bootstrap-rails' # application.js add: //= require react_bootstrap
 # gem 'bootstrap-sass'
 # gem "twitter-bootstrap-rails" # rails g bootstrap:install static
+
+ruby '2.2.5'

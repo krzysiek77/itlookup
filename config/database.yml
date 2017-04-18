@@ -17,5 +17,7 @@ test:
   database: itlookup_tst
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: itlookup_prd
